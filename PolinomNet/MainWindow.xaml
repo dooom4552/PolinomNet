@@ -1,0 +1,188 @@
+﻿<Window x:Class="PolinomNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PolinomNet"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="390" Width="700">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Вкладка 1">
+                <Grid PreviewTextInput="TextBox_PreviewTextInput">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" 
+               Text="Введите поле"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0"
+              Text="Введите делитель" />
+                    <TextBlock Grid.Row="3" Grid.Column="0"
+              Text="Введите делимое"/>
+                    <Button Grid.Row="4" Content="Расчитать" x:Name="Test" 
+                FontFamily="Times New Roman" 
+               FontSize="20"
+                Click="Test_Click"/>
+                    <TextBox x:Name="TextBoxPole"  
+         Grid.Row="1" Grid.Column="1" 
+         PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBoxPole_PreviewKeyDown"/>
+                    <TextBox x:Name="TextBoxdivider" 
+         Grid.Row="2" Grid.Column="1" 
+         PreviewTextInput="TextBox_PreviewTextInput"/>
+                    <TextBox x:Name="TextBoxdividend" 
+         Grid.Row="3" Grid.Column="1" 
+         PreviewTextInput="TextBox_PreviewTextInput"/>
+
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вкладка 2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="Множитель"/>
+                    <TextBlock Grid.Column="3" Grid.Row="0" Text="Степень"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" 
+               Text="Введите поле"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0"
+              Text="Введите делитель" />
+                    <TextBlock Grid.Row="2" Grid.Column="0"
+              Text="Введите делимое"/>
+                    <Button Grid.Row="3" Content="Расчитать" x:Name="Test2" 
+                FontFamily="Times New Roman" 
+               FontSize="20"
+                Click="Test_Click2"/>
+                    <TextBox x:Name="TextBoxPole2"  
+         Grid.Row="0" Grid.Column="1" 
+         PreviewTextInput="TextBox_PreviewTextInput" 
+                     PreviewKeyDown="TextBoxPole_PreviewKeyDown"/>
+                    <TextBlock x:Name="TextBoxResult2" 
+         Grid.Row="3" Grid.Column="1"/>
+
+                    <TextBox x:Name="Factor_divider_TextBox"  
+         Grid.Column="2" Grid.Row="1"/>
+                    <TextBox x:Name="Factor_dividend_TextBox"  
+         Grid.Column="2" Grid.Row="2"/>
+                    <TextBox x:Name="Power_divider_TextBox"  
+         Grid.Column="3" Grid.Row="1"/>
+                    <TextBox x:Name="Power_dividend_TextBox"  
+         Grid.Column="3" Grid.Row="2"/>
+                    <Button x:Name="Factor_Power_divider_Button"
+         Content="Добавить" Grid.Column="4" Grid.Row="1" 
+        Click="Factor_Power_divider_Button_Click"/>
+                    <Button x:Name="Factor_Power_dividend_Button"
+         Content="Добавить" Grid.Column="4" Grid.Row="2" 
+          Click="Factor_Power_dividend_Button_Click"/>
+                    <TextBlock x:Name="Divider_TextBlock"  
+         Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4"       
+         FontStyle="Italic"/>
+                    <TextBlock x:Name="Dividend_TextBlock" 
+        Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4"
+         FontStyle="Italic"/>
+                    <TextBlock Text="Делитель" Grid.Row="4"/>
+                    <TextBlock Text="Делимое" Grid.Row="5"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вкладка 3">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<DataGrid x:Name="MyDataGrid" Loaded="DataGrid_Loaded">
+                        
+                    </DataGrid>-->
+                    <TextBlock Text="Введите поле"/>
+                    <TextBox Grid.Row="1" x:Name="TextBox_Pole3"
+                     PreviewTextInput="TextBox_PreviewTextInput" 
+                     PreviewKeyDown="TextBoxPole_PreviewKeyDown"/>
+                    <TextBlock Text="делимое" Grid.Row="2"/>
+                    <TextBlock Text="делитель" 
+                     Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Text="результат" 
+                               
+                     Grid.Row="2" Grid.Column="2"/>
+                    <StackPanel Grid.Row="3">
+                        <TextBox x:Name="TextBox_dividend3"  
+                          Height="50" Grid.Row="3"
+                    PreviewTextInput="TextBox_PreviewTextInput" VerticalAlignment="Top"/>
+                        <Button x:Name="Button_Result3" 
+                        Content="Расчитать" Height="50" Click="Button_Result3_Click"/>
+                    </StackPanel>
+
+                    <RichTextBox x:Name="TextBox_divider3" 
+                     Grid.Row="3" Grid.Column="1" 
+                     PreviewTextInput="TextBox_PreviewTextInput" FontFamily="Times New Roman" FontSize="11">
+                        <FlowDocument/>
+                    </RichTextBox>
+                    <RichTextBox x:Name="TextBox_Result3" 
+                     Grid.Row="3" Grid.Column="2" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <CheckBox Content="Вывести в EXCEL" 
+             FontFamily="Times New Roman" FontSize="15"
+             x:Name="CheckBox_EXCEL"/>
+
+            <TextBlock x:Name="TextBoxResult"  />
+        </StackPanel>
+
+    </Grid>
+</Window>
